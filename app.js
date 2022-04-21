@@ -37,7 +37,7 @@ mongoose.connect(dbs, {useUnifiedTopology: true, useNewUrlParser: true})
 .then(async () => {
     //
     const PORT = process.env.PORT || 3000;
-    app.listen(PORT, console.log("Server running on port " + PORT));
+    app.listen(PORT, console.log("Server running on port ec " + PORT));
 })
 .catch((error) => console.log(error)); 
 //

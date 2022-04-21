@@ -1,5 +1,5 @@
 {
-  "name": "local.helenz.com",
+  "name": "ecomstore",
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
@@ -27,5 +27,9 @@
     "sweetalert2": "^11.4.8",
     "uuid": "^8.3.2",
     "validator": "^13.7.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/eckno/ecomstore.git"
   }
 }
