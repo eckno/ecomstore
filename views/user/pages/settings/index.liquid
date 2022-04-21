@@ -1,0 +1,254 @@
+{% include 'user/inc/header.liquid' %}
+{% include 'user/inc/topbar.liquid' %}
+{% include 'user/inc/sidebar.liquid' %}
+
+<div class="main-content app-content mt-0">
+    <div class="side-app">
+
+        <!-- CONTAINER -->
+        <div class="main-container container-fluid">
+
+            <!-- PAGE-HEADER -->
+            <div class="page-header">
+                <h1 class="page-title">General Settings</h1>
+                <div>
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="javascript:void(0)">Seetings</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Shop Settings</li>
+                    </ol>
+                </div>
+            </div>
+            <!-- PAGE-HEADER END -->
+
+            <!-- ROW-1 OPEN -->
+            <div class="row">
+                <div class="col-xl-4">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-title">Business Logo</div>
+                        </div>
+                        <div class="card-body">
+                            <div class="text-center chat-image mb-5">
+                                <div class="avatar avatar-xxl chat-profile mb-3 brround">
+                                    <a class="" href="#"><img alt="avatar" src="../assets/images/users/7.jpg" class="brround"></a>
+                                </div>
+                                <div class="main-chat-msg-name">
+                                    <a href="#">
+                                        <h5 class="mb-1 text-dark fw-semibold">Percy Kewshun</h5>
+                                    </a>
+                                    <p class="text-muted mt-0 mb-0 pt-0 fs-13">Web Designer</p>
+                                </div>
+                            </div>
+                
+                        </div>
+                        <div class="card-footer text-end">
+                            <a href="javascript:void(0)" class="btn btn-primary">Update</a>
+                            <a href="javascript:void(0)" class="btn btn-danger">Cancel</a>
+                        </div>
+                    </div>
+                    <div class="card panel-theme">
+                        <div class="card-header">
+                            <div class="float-start">
+                                <h3 class="card-title">Contact</h3>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="card-body no-padding">
+                            <ul class="list-group no-margin">
+                                <li class="list-group-item d-flex ps-3">
+                                    <div class="social social-profile-buttons me-2">
+                                        <a class="social-icon text-primary" href=""><i class="fe fe-mail"></i></a>
+                                    </div>
+                                    <a href="javascript:void(0)" class="my-auto">support@demo.com</a>
+                                </li>
+                                <li class="list-group-item d-flex ps-3">
+                                    <div class="social social-profile-buttons me-2">
+                                        <a class="social-icon text-primary" href=""><i class="fe fe-globe"></i></a>
+                                    </div>
+                                    <a href="javascript:void(0)" class="my-auto">www.abcd.com</a>
+                                </li>
+                                <li class="list-group-item d-flex ps-3">
+                                    <div class="social social-profile-buttons me-2">
+                                        <a class="social-icon text-primary" href=""><i class="fe fe-phone"></i></a>
+                                    </div>
+                                    <a href="javascript:void(0)" class="my-auto">+125 5826 3658</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-8">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">Business Details</h3>
+                        </div>
+                        <form action="#" id="b_details_form">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-lg-6 col-md-12">
+                                    <div class="form-group">
+                                        <label for="exampleInputname">Business Name</label>
+                                        <input type="text" class="form-control" name="b_name" id="b_name" required placeholder="Your Business Name">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-12">
+                                    <div class="form-group">
+                                        <label for="exampleInputname1">Slogan (if any)</label>
+                                        <input type="text" class="form-control" id="b_slogan" name="b_slogan" placeholder="Business Slogan">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Email address</label>
+                                <input type="email" class="form-control" name="b_email" id="b_email" required placeholder="Email address">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputnumber">Contact Number</label>
+                                <input type="number" class="form-control" name="b_number" id="b_number" required placeholder="Contact number">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Contact Address</label>
+                                <input class="form-control" name="b_address" id="b_address" placeholder="contact address">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Business Description</label>
+                                <textarea class="form-control" id="b_description" name="b_description" rows="6">My business is about.........</textarea>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label">Social handles</label>
+                                <div class="row">
+                                    <div class="col-md-4 mb-2">
+                                        <input id="social_fb" name="social_fb" class="form-control" placeholder="Facebook">
+                                    </div>
+                                    <div class="col-md-4 mb-2">
+                                        <input id="social_insta" name="social_insta" class="form-control" placeholder="Instagram">
+                                    </div>
+                                    <div class="col-md-4 mb-2">
+                                        <input id="social_twit" name="social_twit" class="form-control" placeholder="Twitter">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer text-end">
+                            <button type="submit" id="b_details_form_btn_sub" class="btn btn-success my-1">Save</button>
+                            <button type="button" id="b_details_form_btn_canc" style="display: none;" class="btn btn-danger my-1">Cancel</button>
+                        </div>
+                    </form>
+                    </div>
+                    <!-- <div class="row">
+                        <div class="col-lg-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    <div class="card-title">Notifications</div>
+                                </div>
+                                <div class="card-body">
+                                    <div class="form-group mg-b-10">
+                                        <label class="custom-switch ps-0">
+                                        <input type="checkbox" name="custom-switch-checkbox" class="custom-switch-input" checked="">
+                                        <span class="custom-switch-indicator me-3"></span>
+                                        <span class="custom-switch-description mg-l-10">Updates Automatically</span>
+                                    </label>
+                                    </div>
+                                    <div class="form-group mg-b-10">
+                                        <label class="custom-switch ps-0">
+                                        <input type="checkbox" name="custom-switch-checkbox" class="custom-switch-input">
+                                        <span class="custom-switch-indicator me-3"></span>
+                                        <span class="custom-switch-description mg-l-10">Allow Location Map</span>
+                                    </label>
+                                    </div>
+                                    <div class="form-group mg-b-10">
+                                        <label class="custom-switch ps-0">
+                                        <input type="checkbox" name="custom-switch-checkbox" class="custom-switch-input" checked="">
+                                        <span class="custom-switch-indicator me-3"></span>
+                                        <span class="custom-switch-description mg-l-10">Show Contacts</span>
+                                    </label>
+                                    </div>
+                                    <div class="form-group mg-b-10">
+                                        <label class="custom-switch ps-0">
+                                        <input type="checkbox" name="custom-switch-checkbox" class="custom-switch-input" checked="">
+                                        <span class="custom-switch-indicator me-3"></span>
+                                        <span class="custom-switch-description mg-l-10">Show Notfication</span>
+                                    </label>
+                                    </div>
+                                    <div class="form-group mg-b-10">
+                                        <label class="custom-switch ps-0">
+                                        <input type="checkbox" name="custom-switch-checkbox" class="custom-switch-input">
+                                        <span class="custom-switch-indicator me-3"></span>
+                                        <span class="custom-switch-description mg-l-10">Show Tasks Statistics</span>
+                                    </label>
+                                    </div>
+                                    <div class="form-group mg-b-10">
+                                        <label class="custom-switch ps-0">
+                                        <input type="checkbox" name="custom-switch-checkbox" class="custom-switch-input" checked="">
+                                        <span class="custom-switch-indicator me-3"></span>
+                                        <span class="custom-switch-description mg-l-10">Show Email Notification</span>
+                                    </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    <div class="card-title">Privacy and Security</div>
+                                </div>
+                                <div class="card-body">
+                                    <div class="form-group mg-b-10">
+                                        <label class="custom-switch ps-0">
+                                                    <input type="checkbox" name="custom-switch-checkbox" class="custom-switch-input" checked="">
+                                                    <span class="custom-switch-indicator me-3"></span>
+                                                    <span class="custom-switch-description mg-l-10">Allow Others to see my profile</span>
+                                                </label>
+                                    </div>
+                                    <div class="form-group mg-b-10">
+                                        <label class="custom-switch ps-0">
+                                                    <input type="checkbox" name="custom-switch-checkbox" class="custom-switch-input">
+                                                    <span class="custom-switch-indicator me-3"></span>
+                                                    <span class="custom-switch-description mg-l-10">Make my profile Public</span>
+                                                </label>
+                                    </div>
+                                    <div class="form-group mg-b-10">
+                                        <label class="custom-switch ps-0">
+                                                    <input type="checkbox" name="custom-switch-checkbox" class="custom-switch-input">
+                                                    <span class="custom-switch-indicator me-3"></span>
+                                                    <span class="custom-switch-description mg-l-10">Security Alert</span>
+                                                </label>
+                                    </div>
+                                    <div class="form-group mg-b-10">
+                                        <label class="custom-switch ps-0">
+                                                    <input type="checkbox" name="custom-switch-checkbox" class="custom-switch-input" checked="">
+                                                    <span class="custom-switch-indicator me-3"></span>
+                                                    <span class="custom-switch-description mg-l-10">Passcode and Face ID</span>
+                                                </label>
+                                    </div>
+                                    <div class="form-group mg-b-10">
+                                        <label class="custom-switch ps-0">
+                                                    <input type="checkbox" name="custom-switch-checkbox" class="custom-switch-input">
+                                                    <span class="custom-switch-indicator me-3"></span>
+                                                    <span class="custom-switch-description mg-l-10">Two Step Verification</span>
+                                                </label>
+                                    </div>
+                                    <div class="form-group mg-b-10">
+                                        <label class="custom-switch ps-0">
+                                                    <input type="checkbox" name="custom-switch-checkbox" class="custom-switch-input" checked="">
+                                                    <span class="custom-switch-indicator me-3"></span>
+                                                    <span class="custom-switch-description mg-l-10">Always Sign In</span>
+                                                </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+                    
+                </div>
+            </div>
+            <!-- ROW-1 CLOSED -->
+
+        </div>
+        <!--CONTAINER CLOSED -->
+
+    </div>
+</div>
+<!--app-content open-->
+{% include 'user/inc/footer.liquid' %}
