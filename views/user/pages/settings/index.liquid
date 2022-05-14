@@ -27,24 +27,47 @@
                         <div class="card-header">
                             <div class="card-title">Business Logo</div>
                         </div>
+                        <form id="logoForm" enctype="multipart/form-data">
                         <div class="card-body">
-                            <div class="text-center chat-image mb-5">
-                                <div class="avatar avatar-xxl chat-profile mb-3 brround">
-                                    <a class="" href="#"><img alt="avatar" src="../assets/images/users/7.jpg" class="brround"></a>
+                                <style>
+                                    .chat-image>input {
+                                            display: none;
+                                            }
+                                        .chat-profile{
+                                            cursor: pointer;
+                                        }
+                                </style>
+                                <div class="text-center chat-image mb-5">
+                                    <label for="logo">
+                                    <div class="avatar avatar-xxl chat-profile mb-3 brround">
+                                        {% if user.logoUrl %}
+                                        <a class="" href="#"><img id="placeLogo" alt="avatar" src="/uploads/{{user.storeid}}/logo/{{user.logoUrl}}" class="brround"></a>
+                                        {% else %}
+                                        <a class="" href="#"><img id="placeLogo" alt="avatar" src="../assets/images/users/7.jpg" class="brround"></a>
+                                        {% endif %}
+                                    </div>
+                                    </label>
+                                    {% if user.logoUrl %}
+                                    <input type="file" onchange="loadSelectedImage(event)" accept="image/png, image/gif, image/jpeg" name="logo" id="logo">
+                                    {% else %}
+                                    <input type="file" onchange="loadSelectedImage(event)" accept="image/png, image/gif, image/jpeg" name="logo" id="logo" required>
+                                    {% endif %}
+                                    <div class="main-chat-msg-name">
+                                        <a href="#">
+                                            <h5 class="mb-1 text-dark fw-semibold">{{ user.business_name }}</h5>
+                                        </a>
+                                    </div>
                                 </div>
-                                <div class="main-chat-msg-name">
-                                    <a href="#">
-                                        <h5 class="mb-1 text-dark fw-semibold">Percy Kewshun</h5>
-                                    </a>
-                                    <p class="text-muted mt-0 mb-0 pt-0 fs-13">Web Designer</p>
-                                </div>
-                            </div>
-                
+                            
                         </div>
                         <div class="card-footer text-end">
-                            <a href="javascript:void(0)" class="btn btn-primary">Update</a>
-                            <a href="javascript:void(0)" class="btn btn-danger">Cancel</a>
+                            {% if user.logoUrl %}
+                            <button type="submit" id="logo_upload_btn" class="btn btn-primary">Update</button>
+                            {% else %}
+                            <button type="submit" id="logo_upload_btn" class="btn btn-primary">Upload Logo</button>
+                            {% endif %}
                         </div>
+                    </form>
                     </div>
                     <div class="card panel-theme">
                         <div class="card-header">
@@ -59,19 +82,19 @@
                                     <div class="social social-profile-buttons me-2">
                                         <a class="social-icon text-primary" href=""><i class="fe fe-mail"></i></a>
                                     </div>
-                                    <a href="javascript:void(0)" class="my-auto">support@demo.com</a>
+                                    <a href="javascript:void(0)" class="my-auto">{{ user.email }}</a>
                                 </li>
                                 <li class="list-group-item d-flex ps-3">
                                     <div class="social social-profile-buttons me-2">
                                         <a class="social-icon text-primary" href=""><i class="fe fe-globe"></i></a>
                                     </div>
-                                    <a href="javascript:void(0)" class="my-auto">www.abcd.com</a>
+                                    <a href="javascript:void(0)" class="my-auto">{{ user.domain }}</a>
                                 </li>
                                 <li class="list-group-item d-flex ps-3">
                                     <div class="social social-profile-buttons me-2">
                                         <a class="social-icon text-primary" href=""><i class="fe fe-phone"></i></a>
                                     </div>
-                                    <a href="javascript:void(0)" class="my-auto">+125 5826 3658</a>
+                                    <a href="javascript:void(0)" class="my-auto">{{ user.contact_number }}</a>
                                 </li>
                             </ul>
                         </div>
@@ -88,44 +111,44 @@
                                 <div class="col-lg-6 col-md-12">
                                     <div class="form-group">
                                         <label for="exampleInputname">Business Name</label>
-                                        <input type="text" class="form-control" name="b_name" id="b_name" required placeholder="Your Business Name">
+                                        <input type="text" value="{{ user.business_name }}" class="form-control" name="b_name" id="b_name" required placeholder="Your Business Name">
                                     </div>
                                 </div>
                                 <div class="col-lg-6 col-md-12">
                                     <div class="form-group">
                                         <label for="exampleInputname1">Slogan (if any)</label>
-                                        <input type="text" class="form-control" id="b_slogan" name="b_slogan" placeholder="Business Slogan">
+                                        <input type="text" value="{{ user.slogan }}" class="form-control" id="b_slogan" name="b_slogan" placeholder="Business Slogan">
                                     </div>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Email address</label>
-                                <input type="email" class="form-control" name="b_email" id="b_email" required placeholder="Email address">
+                                <input type="email" value="{{ user.email }}" class="form-control" name="b_email" id="b_email" required placeholder="Email address">
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputnumber">Contact Number</label>
-                                <input type="number" class="form-control" name="b_number" id="b_number" required placeholder="Contact number">
+                                <input type="number" value="{{ user.contact_number }}" class="form-control" name="b_number" id="b_number" required placeholder="Contact number">
                             </div>
                             <div class="form-group">
                                 <label class="form-label">Contact Address</label>
-                                <input class="form-control" name="b_address" id="b_address" placeholder="contact address">
+                                <input class="form-control" value="{{ user.contact_address }}" name="b_address" id="b_address" placeholder="contact address">
                             </div>
                             <div class="form-group">
                                 <label class="form-label">Business Description</label>
-                                <textarea class="form-control" id="b_description" name="b_description" rows="6">My business is about.........</textarea>
+                                <textarea class="form-control" value="{{ user.description }}" id="b_description" name="b_description" rows="6">My business is about.........</textarea>
                             </div>
                             
                             <div class="form-group">
                                 <label class="form-label">Social handles</label>
                                 <div class="row">
                                     <div class="col-md-4 mb-2">
-                                        <input id="social_fb" name="social_fb" class="form-control" placeholder="Facebook">
+                                        <input id="social_fb" value="{{ user.socials[0] }}" name="social_fb" class="form-control" placeholder="Facebook">
                                     </div>
                                     <div class="col-md-4 mb-2">
-                                        <input id="social_insta" name="social_insta" class="form-control" placeholder="Instagram">
+                                        <input id="social_insta" value="{{ user.socials[1] }}" name="social_insta" class="form-control" placeholder="Instagram">
                                     </div>
                                     <div class="col-md-4 mb-2">
-                                        <input id="social_twit" name="social_twit" class="form-control" placeholder="Twitter">
+                                        <input id="social_twit" value="{{ user.socials[2] }}" name="social_twit" class="form-control" placeholder="Twitter">
                                     </div>
                                 </div>
                             </div>

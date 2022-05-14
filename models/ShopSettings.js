@@ -48,7 +48,7 @@ const Schema = {
     socials: {
         type: Array
     },
-    logo_path: {
+    logoUrl: {
         type: String,
     }
 }

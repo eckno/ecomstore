@@ -57,7 +57,7 @@ form.addEventListener("submit", (e) => {
                   })
                   //
                  setTimeout(() => {
-                 redirectUrl("/dashbaord");
+                 redirectUrl("/dashboard");
                  }, 3000);
             }
               
