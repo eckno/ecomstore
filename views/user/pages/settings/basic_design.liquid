@@ -2,4 +2,230 @@
 {% include 'user/inc/topbar.liquid' %}
 {% include 'user/inc/sidebar.liquid' %}
 
+<div class="main-content app-content mt-0">
+    <div class="side-app">
+
+        <!-- CONTAINER -->
+        <div class="main-container container-fluid">
+
+            <!-- PAGE-HEADER -->
+            <div class="page-header">
+                <h1 class="page-title">Basic Design</h1>
+                <div>
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="javascript:void(0)">Seetings</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Shop Settings</li>
+                    </ol>
+                </div>
+            </div>
+            <!-- PAGE-HEADER END -->
+
+            <!-- ROW-1 OPEN -->
+            <div class="row">
+                
+                <div class="col-xl-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">Basic Design</h3>
+                        </div>
+                        <form action="#" id="b_details_form">
+                            <div class="card-body">
+                                <div class="form-group mg-b-10">
+                                    <label class="custom-switch ps-0">
+                                    <input type="checkbox" name="custom-switch-checkbox" class="custom-switch-input" checked="">
+                                    <span class="custom-switch-indicator me-3"></span>
+                                    <span class="custom-switch-description mg-l-10">Show slider section (home page)</span>
+                                </label>
+                                </div>
+                                <div class="form-group mg-b-10">
+                                    <label class="custom-switch ps-0">
+                                    <input type="checkbox" name="custom-switch-checkbox" class="custom-switch-input">
+                                    <span class="custom-switch-indicator me-3"></span>
+                                    <span class="custom-switch-description mg-l-10">Show top brands</span>
+                                </label>
+                                </div>
+                                <div class="form-group mg-b-10">
+                                    <label class="custom-switch ps-0">
+                                    <input type="checkbox" name="custom-switch-checkbox" class="custom-switch-input">
+                                    <span class="custom-switch-indicator me-3"></span>
+                                    <span class="custom-switch-description mg-l-10">Show featured products section</span>
+                                </label>
+                                </div>
+                                <div class="form-group mg-b-10">
+                                    <label class="custom-switch ps-0">
+                                    <input type="checkbox" name="custom-switch-checkbox" class="custom-switch-input">
+                                    <span class="custom-switch-indicator me-3"></span>
+                                    <span class="custom-switch-description mg-l-10">Show hand picked products section</span>
+                                </label>
+                                </div>
+                                <div class="form-group mg-b-10">
+                                    <label class="custom-switch ps-0">
+                                    <input type="checkbox" name="custom-switch-checkbox" class="custom-switch-input">
+                                    <span class="custom-switch-indicator me-3"></span>
+                                    <span class="custom-switch-description mg-l-10">Show Trending Categories</span>
+                                </label>
+                                </div>
+                                <div class="form-group mg-b-10">
+                                    <label class="custom-switch ps-0">
+                                    <input type="checkbox" name="custom-switch-checkbox" class="custom-switch-input">
+                                    <span class="custom-switch-indicator me-3"></span>
+                                    <span class="custom-switch-description mg-l-10">Show popular products</span>
+                                </label>
+                                </div>
+
+                                <div class="form-group mg-b-10">
+                                    <label class="custom-switch ps-0">
+                                    <input type="checkbox" name="custom-switch-checkbox" class="custom-switch-input">
+                                    <span class="custom-switch-indicator me-3"></span>
+                                    <span class="custom-switch-description mg-l-10">Show bottom post slide</span>
+                                </label>
+                                </div>
+
+                                <div class="form-group mg-b-10">
+                                    <label class="custom-switch ps-0">
+                                    <input type="checkbox" name="custom-switch-checkbox" class="custom-switch-input">
+                                    <span class="custom-switch-indicator me-3"></span>
+                                    <span class="custom-switch-description mg-l-10">Show departments</span>
+                                </label>
+                                </div>
+                            </div>
+                        <div class="card-footer text-end">
+                            <button type="submit" id="b_details_form_btn_sub" class="btn btn-success my-1">Save</button>
+                            <button type="button" id="b_details_form_btn_canc" style="display: none;" class="btn btn-danger my-1">Cancel</button>
+                        </div>
+                    </form>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">Bottom Section Photo</h3>
+                        </div>
+                        <form action="#" id="b_details_form">
+                            <div class="card-body">
+                                <label for="bphoto" class="col-xs-12 col-sm-12 col-md-12 col-xl-12 mb-5 border-bottom-0" data-responsive="/admin/assets/images/media/1.jpg" data-src="/admin/assets/images/media/1.jpg">
+                                        <img style="cursor: pointer;" class="img-responsive br-5" src="/assets/img/bg/page-title-1.jpg" alt="Thumb-1">
+                                    <input id="bphoto" style="display: none;" type="file" name="bphoto" accept=".jpg, .png, image/jpeg, image/png">
+                                </label>
+                            </div>
+                        <div class="card-footer text-end">
+                            <button type="submit" id="b_details_form_btn_sub" class="btn btn-success my-1">Save</button>
+                            <button type="button" id="b_details_form_btn_canc" style="display: none;" class="btn btn-danger my-1">Cancel</button>
+                        </div>
+                    </form>
+                    </div>
+                    <!-- <div class="row">
+                        <div class="col-lg-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    <div class="card-title">Notifications</div>
+                                </div>
+                                <div class="card-body">
+                                    <div class="form-group mg-b-10">
+                                        <label class="custom-switch ps-0">
+                                        <input type="checkbox" name="custom-switch-checkbox" class="custom-switch-input" checked="">
+                                        <span class="custom-switch-indicator me-3"></span>
+                                        <span class="custom-switch-description mg-l-10">Updates Automatically</span>
+                                    </label>
+                                    </div>
+                                    <div class="form-group mg-b-10">
+                                        <label class="custom-switch ps-0">
+                                        <input type="checkbox" name="custom-switch-checkbox" class="custom-switch-input">
+                                        <span class="custom-switch-indicator me-3"></span>
+                                        <span class="custom-switch-description mg-l-10">Allow Location Map</span>
+                                    </label>
+                                    </div>
+                                    <div class="form-group mg-b-10">
+                                        <label class="custom-switch ps-0">
+                                        <input type="checkbox" name="custom-switch-checkbox" class="custom-switch-input" checked="">
+                                        <span class="custom-switch-indicator me-3"></span>
+                                        <span class="custom-switch-description mg-l-10">Show Contacts</span>
+                                    </label>
+                                    </div>
+                                    <div class="form-group mg-b-10">
+                                        <label class="custom-switch ps-0">
+                                        <input type="checkbox" name="custom-switch-checkbox" class="custom-switch-input" checked="">
+                                        <span class="custom-switch-indicator me-3"></span>
+                                        <span class="custom-switch-description mg-l-10">Show Notfication</span>
+                                    </label>
+                                    </div>
+                                    <div class="form-group mg-b-10">
+                                        <label class="custom-switch ps-0">
+                                        <input type="checkbox" name="custom-switch-checkbox" class="custom-switch-input">
+                                        <span class="custom-switch-indicator me-3"></span>
+                                        <span class="custom-switch-description mg-l-10">Show Tasks Statistics</span>
+                                    </label>
+                                    </div>
+                                    <div class="form-group mg-b-10">
+                                        <label class="custom-switch ps-0">
+                                        <input type="checkbox" name="custom-switch-checkbox" class="custom-switch-input" checked="">
+                                        <span class="custom-switch-indicator me-3"></span>
+                                        <span class="custom-switch-description mg-l-10">Show Email Notification</span>
+                                    </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    <div class="card-title">Privacy and Security</div>
+                                </div>
+                                <div class="card-body">
+                                    <div class="form-group mg-b-10">
+                                        <label class="custom-switch ps-0">
+                                                    <input type="checkbox" name="custom-switch-checkbox" class="custom-switch-input" checked="">
+                                                    <span class="custom-switch-indicator me-3"></span>
+                                                    <span class="custom-switch-description mg-l-10">Allow Others to see my profile</span>
+                                                </label>
+                                    </div>
+                                    <div class="form-group mg-b-10">
+                                        <label class="custom-switch ps-0">
+                                                    <input type="checkbox" name="custom-switch-checkbox" class="custom-switch-input">
+                                                    <span class="custom-switch-indicator me-3"></span>
+                                                    <span class="custom-switch-description mg-l-10">Make my profile Public</span>
+                                                </label>
+                                    </div>
+                                    <div class="form-group mg-b-10">
+                                        <label class="custom-switch ps-0">
+                                                    <input type="checkbox" name="custom-switch-checkbox" class="custom-switch-input">
+                                                    <span class="custom-switch-indicator me-3"></span>
+                                                    <span class="custom-switch-description mg-l-10">Security Alert</span>
+                                                </label>
+                                    </div>
+                                    <div class="form-group mg-b-10">
+                                        <label class="custom-switch ps-0">
+                                                    <input type="checkbox" name="custom-switch-checkbox" class="custom-switch-input" checked="">
+                                                    <span class="custom-switch-indicator me-3"></span>
+                                                    <span class="custom-switch-description mg-l-10">Passcode and Face ID</span>
+                                                </label>
+                                    </div>
+                                    <div class="form-group mg-b-10">
+                                        <label class="custom-switch ps-0">
+                                                    <input type="checkbox" name="custom-switch-checkbox" class="custom-switch-input">
+                                                    <span class="custom-switch-indicator me-3"></span>
+                                                    <span class="custom-switch-description mg-l-10">Two Step Verification</span>
+                                                </label>
+                                    </div>
+                                    <div class="form-group mg-b-10">
+                                        <label class="custom-switch ps-0">
+                                                    <input type="checkbox" name="custom-switch-checkbox" class="custom-switch-input" checked="">
+                                                    <span class="custom-switch-indicator me-3"></span>
+                                                    <span class="custom-switch-description mg-l-10">Always Sign In</span>
+                                                </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+                    
+                </div>
+            </div>
+            <!-- ROW-1 CLOSED -->
+
+        </div>
+        <!--CONTAINER CLOSED -->
+
+    </div>
+</div>
+<!--app-content open-->
 {% include 'user/inc/footer.liquid' %}

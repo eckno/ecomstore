@@ -30,7 +30,7 @@ app.use(session({
 //
 app.use(passport.initialize());
 app.use(passport.session());
-app.use(flash())
+app.use(require('flash')());
 //Set global vars
 app.use((req, res, next) => {
     res.locals.success_msg = req.flash("success_msg");
@@ -52,7 +52,7 @@ const dbs = process.env.MONGOLAB_URI;
 mongoose.connect(dbs, {useUnifiedTopology: true, useNewUrlParser: true})
 .then(async () => {
     //
-    const PORT = process.env.PORT || 3000;
+    const PORT = process.env.PORT || 3008;
     app.listen(PORT, console.log("Server running on port " + PORT));
 })
 .catch((error) => console.log(error)); 
