@@ -10,7 +10,7 @@
 
             <!-- PAGE-HEADER -->
             <div class="page-header">
-                <h1 class="page-title">General Settings</h1>
+                <h1 class="page-title">Basic Design</h1>
                 <div>
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="javascript:void(0)">Seetings</a></li>
@@ -22,137 +22,91 @@
 
             <!-- ROW-1 OPEN -->
             <div class="row">
-                <div class="col-xl-4">
+                
+                <div class="col-xl-12">
                     <div class="card">
                         <div class="card-header">
-                            <div class="card-title">Business Logo</div>
+                            <h3 class="card-title">Basic Design</h3>
                         </div>
-                        <form id="logoForm" enctype="multipart/form-data">
-                        <div class="card-body">
-                                <style>
-                                    .chat-image>input {
-                                            display: none;
-                                            }
-                                        .chat-profile{
-                                            cursor: pointer;
-                                        }
-                                </style>
-                                <div class="text-center chat-image mb-5">
-                                    <label for="logo">
-                                    <div class="avatar avatar-xxl chat-profile mb-3 brround">
-                                        {% if user.logoUrl %}
-                                        <a class="" href="#"><img id="placeLogo" alt="avatar" src="/uploads/{{user.storeid}}/logo/{{user.logoUrl}}" class="brround"></a>
-                                        {% else %}
-                                        <a class="" href="#"><img id="placeLogo" alt="avatar" src="../assets/images/users/7.jpg" class="brround"></a>
-                                        {% endif %}
-                                    </div>
-                                    </label>
-                                    {% if user.logoUrl %}
-                                    <input type="file" onchange="loadSelectedImage(event)" accept="image/png, image/gif, image/jpeg" name="logo" id="logo">
-                                    {% else %}
-                                    <input type="file" onchange="loadSelectedImage(event)" accept="image/png, image/gif, image/jpeg" name="logo" id="logo" required>
-                                    {% endif %}
-                                    <div class="main-chat-msg-name">
-                                        <a href="#">
-                                            <h5 class="mb-1 text-dark fw-semibold">{{ user.business_name }}</h5>
-                                        </a>
-                                    </div>
+                        <form action="#" id="b_details_form">
+                            <div class="card-body">
+                                <div class="form-group mg-b-10">
+                                    <label class="custom-switch ps-0">
+                                    <input type="checkbox" name="custom-switch-checkbox" class="custom-switch-input" checked="">
+                                    <span class="custom-switch-indicator me-3"></span>
+                                    <span class="custom-switch-description mg-l-10">Show slider section (home page)</span>
+                                </label>
                                 </div>
-                            
-                        </div>
+                                <div class="form-group mg-b-10">
+                                    <label class="custom-switch ps-0">
+                                    <input type="checkbox" name="custom-switch-checkbox" class="custom-switch-input">
+                                    <span class="custom-switch-indicator me-3"></span>
+                                    <span class="custom-switch-description mg-l-10">Show top brands</span>
+                                </label>
+                                </div>
+                                <div class="form-group mg-b-10">
+                                    <label class="custom-switch ps-0">
+                                    <input type="checkbox" name="custom-switch-checkbox" class="custom-switch-input">
+                                    <span class="custom-switch-indicator me-3"></span>
+                                    <span class="custom-switch-description mg-l-10">Show featured products section</span>
+                                </label>
+                                </div>
+                                <div class="form-group mg-b-10">
+                                    <label class="custom-switch ps-0">
+                                    <input type="checkbox" name="custom-switch-checkbox" class="custom-switch-input">
+                                    <span class="custom-switch-indicator me-3"></span>
+                                    <span class="custom-switch-description mg-l-10">Show hand picked products section</span>
+                                </label>
+                                </div>
+                                <div class="form-group mg-b-10">
+                                    <label class="custom-switch ps-0">
+                                    <input type="checkbox" name="custom-switch-checkbox" class="custom-switch-input">
+                                    <span class="custom-switch-indicator me-3"></span>
+                                    <span class="custom-switch-description mg-l-10">Show Trending Categories</span>
+                                </label>
+                                </div>
+                                <div class="form-group mg-b-10">
+                                    <label class="custom-switch ps-0">
+                                    <input type="checkbox" name="custom-switch-checkbox" class="custom-switch-input">
+                                    <span class="custom-switch-indicator me-3"></span>
+                                    <span class="custom-switch-description mg-l-10">Show popular products</span>
+                                </label>
+                                </div>
+
+                                <div class="form-group mg-b-10">
+                                    <label class="custom-switch ps-0">
+                                    <input type="checkbox" name="custom-switch-checkbox" class="custom-switch-input">
+                                    <span class="custom-switch-indicator me-3"></span>
+                                    <span class="custom-switch-description mg-l-10">Show bottom post slide</span>
+                                </label>
+                                </div>
+
+                                <div class="form-group mg-b-10">
+                                    <label class="custom-switch ps-0">
+                                    <input type="checkbox" name="custom-switch-checkbox" class="custom-switch-input">
+                                    <span class="custom-switch-indicator me-3"></span>
+                                    <span class="custom-switch-description mg-l-10">Show departments</span>
+                                </label>
+                                </div>
+                            </div>
                         <div class="card-footer text-end">
-                            {% if user.logoUrl %}
-                            <button type="submit" id="logo_upload_btn" class="btn btn-primary">Update</button>
-                            {% else %}
-                            <button type="submit" id="logo_upload_btn" class="btn btn-primary">Upload Logo</button>
-                            {% endif %}
+                            <button type="submit" id="b_details_form_btn_sub" class="btn btn-success my-1">Save</button>
+                            <button type="button" id="b_details_form_btn_canc" style="display: none;" class="btn btn-danger my-1">Cancel</button>
                         </div>
                     </form>
                     </div>
-                    <div class="card panel-theme">
-                        <div class="card-header">
-                            <div class="float-start">
-                                <h3 class="card-title">Contact</h3>
-                            </div>
-                            <div class="clearfix"></div>
-                        </div>
-                        <div class="card-body no-padding">
-                            <ul class="list-group no-margin">
-                                <li class="list-group-item d-flex ps-3">
-                                    <div class="social social-profile-buttons me-2">
-                                        <a class="social-icon text-primary" href=""><i class="fe fe-mail"></i></a>
-                                    </div>
-                                    <a href="javascript:void(0)" class="my-auto">{{ user.email }}</a>
-                                </li>
-                                <li class="list-group-item d-flex ps-3">
-                                    <div class="social social-profile-buttons me-2">
-                                        <a class="social-icon text-primary" href=""><i class="fe fe-globe"></i></a>
-                                    </div>
-                                    <a href="javascript:void(0)" class="my-auto">{{ user.domain }}</a>
-                                </li>
-                                <li class="list-group-item d-flex ps-3">
-                                    <div class="social social-profile-buttons me-2">
-                                        <a class="social-icon text-primary" href=""><i class="fe fe-phone"></i></a>
-                                    </div>
-                                    <a href="javascript:void(0)" class="my-auto">{{ user.contact_number }}</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-8">
+
                     <div class="card">
                         <div class="card-header">
-                            <h3 class="card-title">Business Details</h3>
+                            <h3 class="card-title">Bottom Section Photo</h3>
                         </div>
                         <form action="#" id="b_details_form">
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-lg-6 col-md-12">
-                                    <div class="form-group">
-                                        <label for="exampleInputname">Business Name</label>
-                                        <input type="text" value="{{ user.business_name }}" class="form-control" name="b_name" id="b_name" required placeholder="Your Business Name">
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-md-12">
-                                    <div class="form-group">
-                                        <label for="exampleInputname1">Slogan (if any)</label>
-                                        <input type="text" value="{{ user.slogan }}" class="form-control" id="b_slogan" name="b_slogan" placeholder="Business Slogan">
-                                    </div>
-                                </div>
+                            <div class="card-body">
+                                <label for="bphoto" class="col-xs-12 col-sm-12 col-md-12 col-xl-12 mb-5 border-bottom-0" data-responsive="/admin/assets/images/media/1.jpg" data-src="/admin/assets/images/media/1.jpg">
+                                        <img style="cursor: pointer;" class="img-responsive br-5" src="/assets/img/bg/page-title-1.jpg" alt="Thumb-1">
+                                    <input id="bphoto" style="display: none;" type="file" name="bphoto" accept=".jpg, .png, image/jpeg, image/png">
+                                </label>
                             </div>
-                            <div class="form-group">
-                                <label for="exampleInputEmail1">Email address</label>
-                                <input type="email" value="{{ user.email }}" class="form-control" name="b_email" id="b_email" required placeholder="Email address">
-                            </div>
-                            <div class="form-group">
-                                <label for="exampleInputnumber">Contact Number</label>
-                                <input type="number" value="{{ user.contact_number }}" class="form-control" name="b_number" id="b_number" required placeholder="Contact number">
-                            </div>
-                            <div class="form-group">
-                                <label class="form-label">Contact Address</label>
-                                <input class="form-control" value="{{ user.contact_address }}" name="b_address" id="b_address" placeholder="contact address">
-                            </div>
-                            <div class="form-group">
-                                <label class="form-label">Business Description</label>
-                                <textarea class="form-control" value="{{ user.description }}" id="b_description" name="b_description" rows="6">My business is about.........</textarea>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label class="form-label">Social handles</label>
-                                <div class="row">
-                                    <div class="col-md-4 mb-2">
-                                        <input id="social_fb" value="{{ user.socials[0] }}" name="social_fb" class="form-control" placeholder="Facebook">
-                                    </div>
-                                    <div class="col-md-4 mb-2">
-                                        <input id="social_insta" value="{{ user.socials[1] }}" name="social_insta" class="form-control" placeholder="Instagram">
-                                    </div>
-                                    <div class="col-md-4 mb-2">
-                                        <input id="social_twit" value="{{ user.socials[2] }}" name="social_twit" class="form-control" placeholder="Twitter">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                         <div class="card-footer text-end">
                             <button type="submit" id="b_details_form_btn_sub" class="btn btn-success my-1">Save</button>
                             <button type="button" id="b_details_form_btn_canc" style="display: none;" class="btn btn-danger my-1">Cancel</button>

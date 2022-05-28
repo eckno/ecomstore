@@ -1,28 +1,13 @@
-
-//
-
-
-//
-const protectRout = (req, res, next) => {
-    if(req.isAuthenticated()){
-        //
-        return next();
-    }
-    console.log("Please login to continue...");
-    //
-    res.redirect("/login");
-}
-//
-const allowIf = (req, res, next) => {
-    //
-    if(!req.isAuthenticated()){
-        return next();
-    }
-    //
-    res.redirect("/dashboard");
-}
-
 module.exports = {
-    protectRout,
-    allowIf
-};
+    ensureAuthenticated: async (req, res, next) => {
+        if(req.isAuthenticated()) {
+            return next();
+        }else{
+            //
+            req.flash('error_msg', 'Please login to access your secure space');
+            res.redirect('/login');
+        }
+
+        console.log(req.isAuthenticated());
+    }
+}

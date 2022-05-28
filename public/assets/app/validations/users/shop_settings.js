@@ -49,7 +49,7 @@ shop_details_form.addEventListener("submit", (e) => {
         success: function(resp){
             //
             hideLoader(shop_details_form_btn_sub, "Save");
-            console.log(resp['data']);
+            
             if(resp['data'].success)
             {
                 return notif({
@@ -71,6 +71,58 @@ shop_details_form.addEventListener("submit", (e) => {
             });
         }
     })
+})
+
+const loadSelectedImage = (event) => {
+    //
+    document.getElementById('placeLogo').style.display='block';
+    var reader = new FileReader();
+    reader.onload = function(){
+        var output = document.getElementById('placeLogo');
+        output.src = reader.result;
+    }
+    reader.readAsDataURL(event.target.files[0]);
+}
+
+$("#logoForm").submit((e) => {
+    e.preventDefault();
+    //
+        var btn_logo_loader = document.getElementById("logo_upload_btn");
+        //
+        showLoader(btn_logo_loader);
+        //
+        var formData = new FormData(document.getElementById("logoForm"));
+        $.ajax({
+            url: "/dashboard/settings/shop/uploader",
+            type: "POST",
+            data:  formData,
+            contentType: false,
+            cache: false,
+            processData: false,
+            success: function (resp) {
+                //console.log();
+                hideLoader(btn_logo_loader, "Update");
+                if(resp['data'].success)
+                {
+                    return notif({
+                        msg: resp['data'].response,
+                        type: "success"
+                    });
+                }
+            },
+            error: function(errorResp){
+                hideLoader(btn_logo_loader, "Update");
+                
+                return notif({
+                    type: "error",
+                    msg: `<b>Error: </b>${errorResp['responseJSON'].errors}`,
+                    position: "center",
+                    width: 500,
+                    height: 60,
+                    autohide: true
+                });
+            }           
+        });
 })
 
 //

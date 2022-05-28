@@ -3,13 +3,17 @@
                 <div class="app-sidebar__overlay" data-bs-toggle="sidebar"></div>
                 <div class="app-sidebar">
                     <div class="side-header">
-                        <a class="header-brand1" href="index.html">
-                            <img src="/admin/assets/images/brand/logo.png" class="header-brand-img desktop-logo" alt="logo">
+                        <a class="header-brand1 custom-logo-link" href="/dashboard">
+                            <!-- <img src="/admin/assets/images/brand/logo.png" class="header-brand-img desktop-logo" alt="logo">
                             <img src="/admin/assets/images/brand/logo-1.png" class="header-brand-img toggle-logo"
-                                alt="logo">
-                            <img src="/admin/assets/images/brand/logo-2.png" class="header-brand-img light-logo" alt="logo">
-                            <img src="/admin/assets/images/brand/logo-3.png" class="header-brand-img light-logo1"
-                                alt="logo">
+                                alt="logo"> -->
+                                {% if user.logoUrl %}
+                                <!-- <img src="/admin/assets/images/brand/logo-2.png" class="header-brand-img light-logo" alt="logo"> -->
+                                <img src="/uploads/{{user.storeid}}/logo/{{user.logoUrl}}" width="50px" class="header-brand-img light-logo1" alt="logo">
+                                {% else %}
+                                <img src="/admin/assets/images/brand/logo-2.png" class="header-brand-img light-logo" alt="logo">
+                                <img src="/admin/assets/images/brand/logo-3.png" class="header-brand-img light-logo1" alt="logo">
+                                {% endif %}
                         </a>
                         <!-- LOGO -->
                     </div>
@@ -23,7 +27,7 @@
                                 <h3>Main</h3>
                             </li>
                             <li class="slide">
-                                <a class="side-menu__item" data-bs-toggle="slide" href="index.html"><i
+                                <a class="side-menu__item" data-bs-toggle="slide" href="/dashboard"><i
                                         class="side-menu__icon fe fe-home"></i><span
                                         class="side-menu__label">Dashboard</span></a>
                             </li>
@@ -31,7 +35,7 @@
                             <li class="sub-category">
                                 <h3>Shop Management</h3>
                             </li>
-                            <li class="slide">
+                            <!-- <li class="slide">
                                 <a class="side-menu__item" data-bs-toggle="slide" href="javascript:void(0)"><i
                                         class="side-menu__icon fe fe-shopping-bag"></i><span
                                         class="side-menu__label">My Shop</span><i
@@ -45,7 +49,7 @@
                                     <li><a href="wishlist.html" class="slide-item"> Wishlist</a></li>
                                     <li><a href="checkout.html" class="slide-item"> Checkout</a></li>
                                 </ul>
-                            </li>
+                            </li> -->
                             <li class="slide">
                                 <a class="side-menu__item" data-bs-toggle="slide" href="javascript:void(0)"><i
                                         class="side-menu__icon fe fe-shopping-bag"></i><span
@@ -64,12 +68,8 @@
                             <li class="sub-category">
                                 <h3>Account Management</h3>
                             </li>
-                            <li>
-                                <a class="side-menu__item" href="widgets.html"><i
-                                        class="side-menu__icon fe fe-grid"></i><span
-                                        class="side-menu__label">Widgets</span></a>
-                            </li>
-                            <li class="slide">
+                           
+                            <!-- <li class="slide">
                                 <a class="side-menu__item" data-bs-toggle="slide" href="javascript:void(0)"><i
                                         class="side-menu__icon fe fe-map-pin"></i><span
                                         class="side-menu__label">Maps</span><i
@@ -80,8 +80,8 @@
                                     <li><a href="maps2.html" class="slide-item">Mapel Maps</a></li>
                                     <li><a href="maps.html" class="slide-item">Vector Maps</a></li>
                                 </ul>
-                            </li>
-                            <li class="slide">
+                            </li> -->
+                            <!-- <li class="slide">
                                 <a class="side-menu__item" data-bs-toggle="slide" href="javascript:void(0)"><i
                                         class="side-menu__icon fe fe-bar-chart-2"></i><span
                                         class="side-menu__label">Charts</span><span
@@ -99,8 +99,8 @@
                                     <li><a href="chart-donut.html" class="slide-item"> C3 Donut Charts</a></li>
                                     <li><a href="chart-pie.html" class="slide-item"> C3 Pie charts</a></li>
                                 </ul>
-                            </li>
-                            <li class="slide">
+                            </li> -->
+                            <!-- <li class="slide">
                                 <a class="side-menu__item" data-bs-toggle="slide" href="javascript:void(0)"><i
                                         class="side-menu__icon fe fe-wind"></i><span
                                         class="side-menu__label">Icons</span><i
@@ -109,17 +109,8 @@
                                     <li class="side-menu-label1"><a href="javascript:void(0)">Icons</a></li>
                                     <li><a href="icons.html" class="slide-item"> Font Awesome</a></li>
                                     <li><a href="icons2.html" class="slide-item"> Material Design Icons</a></li>
-                                    <li><a href="icons3.html" class="slide-item"> Simple Line Icons</a></li>
-                                    <li><a href="icons4.html" class="slide-item"> Feather Icons</a></li>
-                                    <li><a href="icons5.html" class="slide-item"> Ionic Icons</a></li>
-                                    <li><a href="icons6.html" class="slide-item"> Flag Icons</a></li>
-                                    <li><a href="icons7.html" class="slide-item"> pe7 Icons</a></li>
-                                    <li><a href="icons8.html" class="slide-item"> Themify Icons</a></li>
-                                    <li><a href="icons9.html" class="slide-item">Typicons Icons</a></li>
-                                    <li><a href="icons10.html" class="slide-item">Weather Icons</a></li>
-                                    <li><a href="icons11.html" class="slide-item">Bootstrap Icons</a></li>
                                 </ul>
-                            </li>
+                            </li> -->
                         </ul>
                         <div class="slide-right" id="slide-right"><svg xmlns="http://www.w3.org/2000/svg" fill="#7b8191"
                                 width="24" height="24" viewBox="0 0 24 24">
